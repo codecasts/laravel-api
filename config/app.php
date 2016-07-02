@@ -170,7 +170,8 @@ return [
         /**
          * Applications
          */
-        App\Applications\Standard\Providers\StandardAppServiceProvider::class
+        App\Applications\Standard\Providers\StandardAppServiceProvider::class,
+        App\Applications\Authentication\Providers\AuthenticationAppServiceProvider::class,
     ],
 
     /*

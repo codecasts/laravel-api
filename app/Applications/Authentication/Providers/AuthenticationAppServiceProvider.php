@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Applications\Standard\Providers;
+namespace App\Applications\Authentication\Providers;
 
 use App\Core\Providers\AbstractApplicationServiceProvider;
 use Dingo\Api\Routing\Router;
 
-class StandardAppServiceProvider extends AbstractApplicationServiceProvider
+class AuthenticationAppServiceProvider extends AbstractApplicationServiceProvider
 {
     public function register()
     {
@@ -20,9 +20,9 @@ class StandardAppServiceProvider extends AbstractApplicationServiceProvider
     public function registerRoutes(Router $router)
     {
         $attributes = [
-            'namespace' => 'App\Applications\Standard\Http\Controllers',
+            'namespace' => 'App\Applications\Authentication\Http\Controllers',
             'version' => 'v1',
-            'middleware' => ['api.auth'],
+            'prefix' => 'auth',
         ];
 
         $router->group($attributes, function ($router) {

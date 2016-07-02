@@ -9,7 +9,7 @@ class UserRules extends Rules
     public function defaultRules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|min:6',
         ];
     }
 
@@ -17,7 +17,6 @@ class UserRules extends Rules
     {
         return $this->returnRules([
             'email' => 'required|email',
-            'password' => 'required',
         ]);
     }
 
@@ -25,6 +24,22 @@ class UserRules extends Rules
     {
         return $this->returnRules([
             'email' => 'email',
+        ]);
+    }
+
+    public function credentials()
+    {
+        return [
+            'email' =>  'required|email',
+            'password' => 'required',
+        ];
+    }
+
+    public function register()
+    {
+        return $this->returnRules([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ]);
     }
 }

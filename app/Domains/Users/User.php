@@ -2,22 +2,15 @@
 
 namespace App\Domains\Users;
 
-use App\Domains\Users\Presenters\UserPresenter;
 use App\Domains\Users\Rules\UserRules;
-use App\Support\ViewPresenter\Presentable;
 use Artesaos\Shield\HasRules;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Presentable, HasRules;
+    use HasRules;
 
     protected static $rulesFrom = UserRules::class;
-
-    /**
-     * @var string View presenter class name.
-     */
-    protected $presenter = UserPresenter::class;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +29,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * @param $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

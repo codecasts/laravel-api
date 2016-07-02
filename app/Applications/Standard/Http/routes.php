@@ -1,4 +1,9 @@
 <?php
 
-/** @var \Illuminate\Routing\Router $router */
-$router->get('', ['as' => 'home', 'uses' => 'HomeController@index']);
+/** @var Dingo\Api\Routing\Router $router */
+
+// Display current user's information
+$router->get('profile', 'ProfileController@get');
+
+// Update current user's information
+$router->put('profile', 'ProfileController@update');

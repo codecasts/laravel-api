@@ -2,10 +2,10 @@
 
 namespace App\Applications\Standard\Http\Controllers;
 
-class HomeController extends BaseController
+class ProfileController extends BaseController
 {
     public function index()
     {
-        return $this->view('home');
+        return ['hello world :('];
     }
 }

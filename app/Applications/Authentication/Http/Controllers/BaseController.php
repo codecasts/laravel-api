@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Applications\Standard\Http\Controllers;
+namespace App\Applications\Authentication\Http\Controllers;
 
 use App\Core\Http\Controllers\CoreController;
 
