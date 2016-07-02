@@ -12,7 +12,9 @@
         "artesaos/warehouse": "2.x-dev",
         "league/fractal": "^0.13.0",
         "artesaos/migrator": "^1.0",
-        "artesaos/shield": "^1.0"
+        "artesaos/shield": "^1.0",
+        "dingo/api": "1.0.*@dev",
+        "tymon/jwt-auth": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

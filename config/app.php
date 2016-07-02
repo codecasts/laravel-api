@@ -152,6 +152,8 @@ return [
          * Packages
          */
         Migrator\MigrationServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -214,6 +216,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'API'       => Dingo\Api\Facade\API::class,
+        'APIRoute'  => Dingo\Api\Facade\Route::class,
 
     ],
 
